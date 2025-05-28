@@ -46,6 +46,7 @@ android {
 
 
 dependencies {
+
     //navigation
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
@@ -61,7 +62,6 @@ dependencies {
 
     implementation("androidx.compose.foundation:foundation:1.5.0")
 
-    //optional
     implementation("androidx.room:room-ktx:2.6.1")
     implementation("androidx.compose.material3:material3:1.1.0-alpha02")
     implementation ("androidx.compose.material:material:1.4.0")
