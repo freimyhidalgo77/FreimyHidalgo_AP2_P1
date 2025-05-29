@@ -1,4 +1,3 @@
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -9,12 +8,12 @@ plugins {
 }
 
 android {
-    namespace = "edu.ucne.registrotecnico"
+    namespace = "edu.ucne.aplicada2.parcial1"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "edu.ucne.registrotecnico"
-        minSdk = 24
+        applicationId = "edu.ucne.aplicada2.parcial1"
+        minSdk = 26
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
@@ -46,41 +45,38 @@ android {
 
 
 dependencies {
-
     //navigation
     implementation(libs.androidx.navigation.compose)
     implementation(libs.kotlinx.serialization.json)
 
     //room
-    implementation("androidx.room:room-runtime:2.6.1")
+    implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.junit.ktx)
     implementation(libs.androidx.activity.ktx)
-    implementation(libs.androidx.benchmark.common)
-    annotationProcessor("androidx.room:room-compiler:2.6.1")
-    ksp("androidx.room:room-compiler:2.6.1")
+    annotationProcessor(libs.room.compiler)
+    ksp(libs.room.compiler)
 
 
-    implementation("androidx.compose.foundation:foundation:1.5.0")
+    implementation(libs.androidx.foundation)
 
-    implementation("androidx.room:room-ktx:2.6.1")
-    implementation("androidx.compose.material3:material3:1.1.0-alpha02")
-    implementation ("androidx.compose.material:material:1.4.0")
-    implementation("androidx.compose.material:material:1.3.1")
+    //optional
+    implementation(libs.androidx.room.ktx)
+    implementation(libs.material3)
+    implementation (libs.androidx.material.v140)
+    implementation(libs.material) // Usa la última versión
+
 
 
     //Hilt
-    implementation("com.google.dagger:hilt-android:2.51")
-    ksp("com.google.dagger:hilt-android-compiler:2.51")
-    implementation("androidx.hilt:hilt-navigation-compose:1.2.0")
-
+    implementation(libs.dagger.hilt.android)
+    ksp(libs.hilt.android.compiler)
+    implementation(libs.androidx.hilt.navigation.compose)
 
     //Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.moshi:moshi-kotlin:1.14.0")
-    implementation("com.squareup.retrofit2:converter-moshi:2.9.0")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
-
-
+    implementation(libs.retrofit2.retrofit)
+    implementation(libs.moshi.kotlin)
+    implementation(libs.converter.moshi)
+    implementation(libs.logging.interceptor)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
