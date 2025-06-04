@@ -12,7 +12,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
+import androidx.room.Room
+import androidx.room.RoomDatabase
 import dagger.hilt.android.AndroidEntryPoint
+import edu.ucne.freimyhidalgo_p1_ap2.data.local.database.TareaDb
 import edu.ucne.freimyhidalgo_p1_ap2.presentation.navigation.HostNavigation
 import edu.ucne.freimyhidalgo_p1_ap2.ui.theme.FreimyHidalgo_P1_AP2Theme
 
@@ -24,7 +27,13 @@ class MainActivity : ComponentActivity() {
         setContent {
             FreimyHidalgo_P1_AP2Theme {
               val nav = rememberNavController()
-                HostNavigation(nav)
+                val tareadb = Room.databaseBuilder(
+                    applicationContext,
+                    TareaDb::class.java,
+                    "TareaDb"
+                )
+                HostNavigation(
+                    navHostController = nav)
 
                 }
             }
