@@ -76,7 +76,7 @@ fun TareaEditBodyScreen(
             CenterAlignedTopAppBar(
                 title = {
                     Text(
-                        text = "Crear tareas",
+                        text = "Modificar tareas",
                         style = TextStyle(
                             fontWeight = FontWeight.Bold,
                             fontSize = 20.sp,
@@ -129,7 +129,10 @@ fun TareaEditBodyScreen(
             ) {
 
                 OutlinedButton(
-                    onClick = { save() },
+                    onClick = { save()
+                               goBack()
+
+                              },
                     modifier = Modifier.weight(1f),
                     shape = RoundedCornerShape(16.dp)
 

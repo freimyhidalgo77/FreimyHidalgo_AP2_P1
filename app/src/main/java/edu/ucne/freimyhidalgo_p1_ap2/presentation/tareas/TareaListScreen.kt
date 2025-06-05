@@ -88,7 +88,7 @@ fun TareaBodyListScreen(
                     )
                 },
                 colors = TopAppBarDefaults.centerAlignedTopAppBarColors(
-                    containerColor = Color.Red
+                    containerColor = MaterialTheme.colorScheme.primary
                 )
             )
         },
