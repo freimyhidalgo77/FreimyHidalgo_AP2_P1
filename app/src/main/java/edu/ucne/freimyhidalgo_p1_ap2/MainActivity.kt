@@ -31,9 +31,12 @@ class MainActivity : ComponentActivity() {
                     applicationContext,
                     TareaDb::class.java,
                     "TareaDb"
-                )
+                ).build()
+
                 HostNavigation(
-                    navHostController = nav)
+                    navHostController = nav,
+                    taraeDb = tareadb
+                )
 
                 }
             }
