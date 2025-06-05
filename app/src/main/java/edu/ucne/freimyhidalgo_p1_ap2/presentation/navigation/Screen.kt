@@ -11,7 +11,7 @@ sealed class Screen{
     data class EditTareaScreen(val tareaId:Int?): Screen()
 
     @Serializable
-    data class DeleteTareaScreen(val tareaId:Int?):Screen
+    data class DeleteTareaScreen(val tareaId:Int?):Screen()
 
     @Serializable
     data object TareaList: Screen()
